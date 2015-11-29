@@ -1,0 +1,11 @@
+The following are the 10 ingredients I will attempt to recognize:
+- Carrot
+- Potato
+- Tomato
+- Onion
+- Spinach
+- Mayonnaise
+- Cheese
+- Rice
+- Kidney Bean
+- Black Bean
