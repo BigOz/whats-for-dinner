@@ -36,7 +36,7 @@ def train():
     global_step = tf.Variable(0, trainable=False)
 
     # Get images and labels for dataset.
-    images, labels = nn_conig.distorted_inputs()
+    images, labels = nn_config.distorted_inputs()
 
     # Build a Graph that computes the logits predictions from the
     # inference model.

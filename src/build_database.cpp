@@ -40,7 +40,7 @@ int main()
     ifstream input;
 
     // Imports the list, which was extracted from a previous shell script
-    input.open("list.txt");
+    input.open("../../images/scaled_images/list.txt");
 
     // Initializes an array of strings containing file names to be scanned. The
     // container array was used to allow easier randomization using a built in
@@ -75,7 +75,7 @@ int main()
     // Opens the stream, pointing it towards a file names "train.bin." The flag
     // "binary" tells C++ to treat the stream as a binary, which will keep
     // garbage like newlines, etc from being pushed in to it.
-    binfile.open("../nn/train.bin", ios::binary);
+    binfile.open("../../nn/train.bin", ios::binary);
 
     // Iterates through the randomized strings, loads the respective image, and
     // processes the type from the filename. The type and image are then written
@@ -147,7 +147,7 @@ int main()
     ofstream binfile2;
 
     // This file will be name "eval.bin"
-    binfile2.open("../nn/eval.bin", ios::binary);
+    binfile2.open("../../nn/eval.bin", ios::binary);
 
     // Starts reading images from wherever the previous section finished
     for (int i = train; i < QUANTITY; ++i)

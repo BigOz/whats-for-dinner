@@ -91,18 +91,18 @@ def evaluate():
   with tf.Graph().as_default():
     # Get images and labels for dataset.
     eval_data = FLAGS.eval_data == 'test'
-    images, labels = nn.inputs(eval_data=eval_data)
+    images, labels = nn_config.inputs(eval_data=eval_data)
 
     # Build a Graph that computes the logits predictions from the
     # inference model.
-    logits = nn.inference(images)
+    logits = nn_config.inference(images)
 
     # Calculate predictions.
     top_k_op = tf.nn.in_top_k(logits, labels, 1)
 
     # Restore the moving average version of the learned variables for eval.
     variable_averages = tf.train.ExponentialMovingAverage(
-        nn.MOVING_AVERAGE_DECAY)
+        nn_config.MOVING_AVERAGE_DECAY)
     variables_to_restore = {}
     for v in tf.all_variables():
       if v in tf.trainable_variables():
