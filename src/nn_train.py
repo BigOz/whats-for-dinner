@@ -1,3 +1,7 @@
+# This file is a modified version of a tutorial Google released showing how
+# to use TensorFlow. In that tutorial, Google recommends modifying the script
+# for different projects, which is exactly what I have done.
+
 """
 Trains the network.
 
