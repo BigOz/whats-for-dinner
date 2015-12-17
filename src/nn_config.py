@@ -35,7 +35,7 @@ FLAGS = tf.app.flags.FLAGS
 # Basic model parameters.
 tf.app.flags.DEFINE_integer('batch_size', 128,
                             """Number of images to process in a batch.""")
-tf.app.flags.DEFINE_string('data_dir', '/home/olson4/workspace/project/whats-for-dinner/nn/nn_data',
+tf.app.flags.DEFINE_string('data_dir', '../nn/nn_data',
                            """Path to the data directory.""")
 
 # The image size.
@@ -147,7 +147,7 @@ def distorted_inputs():
     labels: Labels. 1D tensor of [batch_size] size.
   """
   print(FLAGS.data_dir)
-  filenames = ["/home/olson4/workspace/project/whats-for-dinner/nn/train.bin"]
+  filenames = ["../nn/train.bin"]
   for f in filenames:
     if not gfile.Exists(f):
       raise ValueError('Failed to find file: ' + f)
@@ -211,10 +211,10 @@ def inputs(eval_data):
     raise ValueError('Please supply a data_dir')
 
   if not eval_data:
-    filenames = ["/home/olson4/workspace/project/whats-for-dinner/nn/train.bin"]
+    filenames = ["../nn/train.bin"]
     num_examples_per_epoch = NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN
   else:
-    filenames = ["/home/olson4/workspace/project/whats-for-dinner/nn/eval.bin"]
+    filenames = ["../nn/eval.bin"]
     num_examples_per_epoch = NUM_EXAMPLES_PER_EPOCH_FOR_EVAL
 
   for f in filenames:
